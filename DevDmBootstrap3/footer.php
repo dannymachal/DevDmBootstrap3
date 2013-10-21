@@ -8,13 +8,11 @@
 
 <?php get_template_part('template-part', 'footernav'); ?>
 
-<?php wp_footer(); ?>
-
 </div>
 <!-- end main container -->
 
 <?php if (!empty($dm_settings['analytics_code'])) { echo stripslashes($dm_settings['analytics_code']) ;} ?>
 
-
+<?php wp_footer(); ?>
 </body>
 </html>

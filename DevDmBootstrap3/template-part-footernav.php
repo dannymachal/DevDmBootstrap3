@@ -13,8 +13,7 @@
 
                     <?php
                     wp_nav_menu( array(
-                            'menu'              => 'main_menu',
-                            'theme_location'    => 'main_menu',
+                            'theme_location'    => 'footer_menu',
                             'depth'             => 2,
                             'container'         => 'div',
                             'container_class'   => 'collapse navbar-collapse navbar-2-collapse',
