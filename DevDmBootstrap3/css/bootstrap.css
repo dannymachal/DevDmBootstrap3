@@ -230,7 +230,9 @@ table {
   .table td,
   .table th,
   #wp-calendar td,
-  #wp-calendar th {
+  #wp-calendar th,
+  table td,
+  table th {
     background-color: #fff !important;
   }
   .btn > .caret,
@@ -241,7 +243,8 @@ table {
     border: 1px solid #000;
   }
   .table,
-  #wp-calendar {
+  #wp-calendar,
+  table {
     border-collapse: collapse !important;
   }
   .table-bordered th,
@@ -1289,7 +1292,8 @@ th {
   text-align: left;
 }
 .table,
-#wp-calendar {
+#wp-calendar,
+table {
   width: 100%;
   margin-bottom: 20px;
 }
@@ -1304,14 +1308,21 @@ th {
 #wp-calendar tfoot > tr > th,
 #wp-calendar thead > tr > td,
 #wp-calendar tbody > tr > td,
-#wp-calendar tfoot > tr > td {
+#wp-calendar tfoot > tr > td,
+table thead > tr > th,
+table tbody > tr > th,
+table tfoot > tr > th,
+table thead > tr > td,
+table tbody > tr > td,
+table tfoot > tr > td {
   padding: 8px;
   line-height: 1.428571429;
   vertical-align: top;
   border-top: 1px solid #dddddd;
 }
 .table thead > tr > th,
-#wp-calendar thead > tr > th {
+#wp-calendar thead > tr > th,
+table thead > tr > th {
   vertical-align: bottom;
   border-bottom: 2px solid #dddddd;
 }
@@ -1326,15 +1337,23 @@ th {
 #wp-calendar thead:first-child tr:first-child th,
 #wp-calendar caption + thead tr:first-child td,
 #wp-calendar colgroup + thead tr:first-child td,
-#wp-calendar thead:first-child tr:first-child td {
+#wp-calendar thead:first-child tr:first-child td,
+table caption + thead tr:first-child th,
+table colgroup + thead tr:first-child th,
+table thead:first-child tr:first-child th,
+table caption + thead tr:first-child td,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child td {
   border-top: 0;
 }
 .table tbody + tbody,
-#wp-calendar tbody + tbody {
+#wp-calendar tbody + tbody,
+table tbody + tbody {
   border-top: 2px solid #dddddd;
 }
 .table .table,
-#wp-calendar #wp-calendar {
+#wp-calendar #wp-calendar,
+table table {
   background-color: #ffffff;
 }
 .table-condensed thead > tr > th,
@@ -1400,7 +1419,19 @@ table th[class*="col-"] {
 #wp-calendar > tfoot > tr.active > td,
 #wp-calendar > thead > tr.active > th,
 #wp-calendar > tbody > tr.active > th,
-#wp-calendar > tfoot > tr.active > th {
+#wp-calendar > tfoot > tr.active > th,
+table > thead > tr > td.active,
+table > tbody > tr > td.active,
+table > tfoot > tr > td.active,
+table > thead > tr > th.active,
+table > tbody > tr > th.active,
+table > tfoot > tr > th.active,
+table > thead > tr.active > td,
+table > tbody > tr.active > td,
+table > tfoot > tr.active > td,
+table > thead > tr.active > th,
+table > tbody > tr.active > th,
+table > tfoot > tr.active > th {
   background-color: #f5f5f5;
 }
 .table > thead > tr > td.success,
@@ -1426,7 +1457,19 @@ table th[class*="col-"] {
 #wp-calendar > tfoot > tr.success > td,
 #wp-calendar > thead > tr.success > th,
 #wp-calendar > tbody > tr.success > th,
-#wp-calendar > tfoot > tr.success > th {
+#wp-calendar > tfoot > tr.success > th,
+table > thead > tr > td.success,
+table > tbody > tr > td.success,
+table > tfoot > tr > td.success,
+table > thead > tr > th.success,
+table > tbody > tr > th.success,
+table > tfoot > tr > th.success,
+table > thead > tr.success > td,
+table > tbody > tr.success > td,
+table > tfoot > tr.success > td,
+table > thead > tr.success > th,
+table > tbody > tr.success > th,
+table > tfoot > tr.success > th {
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
@@ -1459,7 +1502,19 @@ table th[class*="col-"] {
 #wp-calendar > tfoot > tr.danger > td,
 #wp-calendar > thead > tr.danger > th,
 #wp-calendar > tbody > tr.danger > th,
-#wp-calendar > tfoot > tr.danger > th {
+#wp-calendar > tfoot > tr.danger > th,
+table > thead > tr > td.danger,
+table > tbody > tr > td.danger,
+table > tfoot > tr > td.danger,
+table > thead > tr > th.danger,
+table > tbody > tr > th.danger,
+table > tfoot > tr > th.danger,
+table > thead > tr.danger > td,
+table > tbody > tr.danger > td,
+table > tfoot > tr.danger > td,
+table > thead > tr.danger > th,
+table > tbody > tr.danger > th,
+table > tfoot > tr.danger > th {
   background-color: #f2dede;
   border-color: #eed3d7;
 }
@@ -1492,7 +1547,19 @@ table th[class*="col-"] {
 #wp-calendar > tfoot > tr.warning > td,
 #wp-calendar > thead > tr.warning > th,
 #wp-calendar > tbody > tr.warning > th,
-#wp-calendar > tfoot > tr.warning > th {
+#wp-calendar > tfoot > tr.warning > th,
+table > thead > tr > td.warning,
+table > tbody > tr > td.warning,
+table > tfoot > tr > td.warning,
+table > thead > tr > th.warning,
+table > tbody > tr > th.warning,
+table > tfoot > tr > th.warning,
+table > thead > tr.warning > td,
+table > tbody > tr.warning > td,
+table > tfoot > tr.warning > td,
+table > thead > tr.warning > th,
+table > tbody > tr.warning > th,
+table > tfoot > tr.warning > th {
   background-color: #fcf8e3;
   border-color: #fbeed5;
 }
@@ -1511,7 +1578,8 @@ table th[class*="col-"] {
     border: 1px solid #dddddd;
   }
   .table-responsive > .table,
-  .table-responsive > #wp-calendar {
+  .table-responsive > #wp-calendar,
+  .table-responsive > table {
     margin-bottom: 0;
     background-color: #fff;
   }
@@ -1526,7 +1594,13 @@ table th[class*="col-"] {
   .table-responsive > #wp-calendar > tfoot > tr > th,
   .table-responsive > #wp-calendar > thead > tr > td,
   .table-responsive > #wp-calendar > tbody > tr > td,
-  .table-responsive > #wp-calendar > tfoot > tr > td {
+  .table-responsive > #wp-calendar > tfoot > tr > td,
+  .table-responsive > table > thead > tr > th,
+  .table-responsive > table > tbody > tr > th,
+  .table-responsive > table > tfoot > tr > th,
+  .table-responsive > table > thead > tr > td,
+  .table-responsive > table > tbody > tr > td,
+  .table-responsive > table > tfoot > tr > td {
     white-space: nowrap;
   }
   .table-responsive > .table-bordered {
@@ -4876,11 +4950,13 @@ a.list-group-item:focus {
   border-top-width: 0;
 }
 .panel > .table,
-.panel > #wp-calendar {
+.panel > #wp-calendar,
+.panel > table {
   margin-bottom: 0;
 }
 .panel > .panel-body + .table,
-.panel > .panel-body + #wp-calendar {
+.panel > .panel-body + #wp-calendar,
+.panel > .panel-body + table {
   border-top: 1px solid #dddddd;
 }
 .panel-heading {
@@ -5674,6 +5750,10 @@ img.alignnone {
   max-width: 100%;
   height: auto;
 }
+iframe,
+embed {
+  max-width: 100%;
+}
 /* Sticky Post */
 .sticky {
   background: #eeeeee;
@@ -5706,6 +5786,15 @@ img.alignnone {
 /* Search Form Widget */
 #searchform #searchsubmit {
   margin-top: 5px;
+}
+.widget {
+  margin-bottom: 5px;
+}
+/* Tables */
+/* Post text Wrap Fixes */
+.post {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 }
 .clearfix:before,
 .clearfix:after {
