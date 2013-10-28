@@ -255,7 +255,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
                 <tr valign="top"><th scope="row">Right Sidebar Size</th>
                     <td>
                 <?php foreach( $dm_sidebar_sizes as $sizes ) : ?>
-                    <input type="radio" id="<?php echo $sizes['value']; ?>" name="dm_options[right_sidebar_width]" value="<?php esc_attr( $sizes['value'] ); ?>" <?php checked( $settings['right_sidebar_width'], $sizes['value'] ); ?> />
+                    <input type="radio" id="<?php echo $sizes['value']; ?>" name="dm_options[right_sidebar_width]" value="<?php echo esc_attr( $sizes['value'] ); ?>" <?php checked( $settings['right_sidebar_width'], $sizes['value'] ); ?> />
                     <label for="<?php echo $sizes['value']; ?>"><?php echo $sizes['label']; ?></label><br />
                 <?php endforeach; ?>
                     </td>
@@ -269,7 +269,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
                 <tr valign="top"><th scope="row">Left Sidebar Size</th>
                     <td>
                         <?php foreach( $dm_sidebar_sizes as $sizes ) : ?>
-                            <input type="radio" id="<?php echo $sizes['value']; ?>" name="dm_options[left_sidebar_width]" value="<?php esc_attr( $sizes['value'] ); ?>" <?php checked( $settings['left_sidebar_width'], $sizes['value'] ); ?> />
+                            <input type="radio" id="<?php echo $sizes['value']; ?>" name="dm_options[left_sidebar_width]" value="<?php echo esc_attr( $sizes['value'] ); ?>" <?php checked( $settings['left_sidebar_width'], $sizes['value'] ); ?> />
                             <label for="<?php echo $sizes['value']; ?>"><?php echo $sizes['label']; ?></label><br />
                         <?php endforeach; ?>
                     </td>
