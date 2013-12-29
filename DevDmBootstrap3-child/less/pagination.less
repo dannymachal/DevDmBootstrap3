@@ -10,7 +10,7 @@
   > li {
     display: inline; // Remove list-style and block-level defaults
     > a,
-    > col-md- {
+    > span {
       position: relative;
       float: left; // Collapse white-space
       padding: @padding-base-vertical @padding-base-horizontal;
@@ -22,21 +22,21 @@
     }
     &:first-child {
       > a,
-      > col-md- {
+      > span {
         margin-left: 0;
         .border-left-radius(@border-radius-base);
       }
     }
     &:last-child {
       > a,
-      > col-md- {
+      > span {
         .border-right-radius(@border-radius-base);
       }
     }
   }
 
   > li > a,
-  > li > col-md- {
+  > li > span {
     &:hover,
     &:focus {
       background-color: @pagination-hover-bg;
@@ -44,7 +44,7 @@
   }
 
   > .active > a,
-  > .active > col-md- {
+  > .active > span {
     &,
     &:hover,
     &:focus {
@@ -57,7 +57,9 @@
   }
 
   > .disabled {
-    > col-md-,
+    > span,
+    > span:hover,
+    > span:focus,
     > a,
     > a:hover,
     > a:focus {

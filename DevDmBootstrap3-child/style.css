@@ -3,16 +3,16 @@ Theme Name: DevDmBootstrap3-Child
 Theme URI: http://devdm.com/DevDmBootstrap3
 Author: Danny Machal
 Author URI: http://devdm.com/
-Description: A versatile and responsive Bootstrap WordPress starter theme FOR DEVELOPERS based on Twitter Bootstrap 3.0.
-Version: 1.0
+Description: A versatile and responsive Bootstrap WordPress starter theme FOR DEVELOPERS based on Twitter Bootstrap 3.0.3.
+Version: 1.24
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, theme-options, translation-ready
-Text Domain: DevDmBootstrap3
-Template: DevDmBootstrap3
+Tags: one-column, two-columns, right-sidebar, fluid-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, theme-options, translation-ready
+Text Domain: devdmbootstrap3
+Template: devdmbootstrap3
 */
 
-@import "../DevDmBootstrap3/style.css";
+@import "../devdmbootstrap3/style.css";
 @import "css/bootstrap.css";
 
 /* YOU SHOULD BE MAKING A CHILD THEME. Don't let me be a bad guy and erase all your hard work with a theme update. I just want to bring you new amazing features. I don't want to destroy your world. I've include a child theme to use. Need help? http://devdm.com/DevDmBootstrap3/child-themes/ */
@@ -28,6 +28,10 @@ Template: DevDmBootstrap3
 }
 
 .dmbs-header-img {
+
+}
+
+.dmbs-header-text {
 
 }
 
@@ -52,5 +56,13 @@ Template: DevDmBootstrap3
 }
 
 .dmbs-footer-menu {
+
+}
+
+.dmbs-author-credits {
+
+}
+
+.dmbs-footer {
 
 }
