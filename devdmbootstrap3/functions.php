@@ -7,7 +7,7 @@
     $themename = "DevDmBootstrap3";
     $developer_uri = "http://devdm.com";
     $shortname = "dm";
-    $version = '1.3';
+    $version = '1.27';
     load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages' );
 
 ////////////////////////////////////////////////////////////////////
@@ -23,16 +23,15 @@
     include 'shortcodes.php';
 
 ////////////////////////////////////////////////////////////////////
-// Enqueue Styles
+// Enqueue Styles (normal style.css and bootstrap.css)
 ////////////////////////////////////////////////////////////////////
-    function theme_stylesheet()
+    function devdmbootstrap3_theme_stylesheets()
     {
+        wp_register_style('bootstrap.css', get_template_directory_uri() . '/css/bootstrap.css', array(), '1', 'all' );
+        wp_enqueue_style( 'bootstrap.css');
         wp_enqueue_style( 'stylesheet', get_stylesheet_uri(), array(), '1', 'all' );
     }
-    add_action('wp_enqueue_scripts', 'theme_stylesheet');
-
-//Editor Style
-add_editor_style('css/editor-style.css');
+    add_action('wp_enqueue_scripts', 'devdmbootstrap3_theme_stylesheets');
 
 ////////////////////////////////////////////////////////////////////
 // Register Bootstrap JS with jquery
