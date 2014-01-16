@@ -10,7 +10,7 @@
     <?php //left sidebar ?>
     <?php get_sidebar( 'left' ); ?>
 
-    <div class="col-md-<?php echo main_content_width(); ?> dmbs-main">
+    <div class="col-md-<?php devdmbootstrap3_main_content_width(); ?> dmbs-main">
 
             <?php // theloop
                 if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -38,7 +38,7 @@
                        <div <?php post_class(); ?>>
 
                             <h2 class="page-header">
-                                <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'DevDmSmallbusiness' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+                                <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'devdmbootstrap3' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
                             </h2>
 
                             <?php if ( has_post_thumbnail() ) : ?>
@@ -51,7 +51,7 @@
                             <?php  if ( comments_open() ) : ?>
                                    <div class="clear"></div>
                                   <p class="text-right">
-                                      <a class="btn btn-success" type="button" href="<?php the_permalink(); ?>#comments"><?php comments_number('Leave a Comment', 'One Comment', '% Comments' );?> <span class="glyphicon glyphicon-comment"></span></a>
+                                      <a class="btn btn-success" type="button" href="<?php the_permalink(); ?>#comments"><?php comments_number(__('Leave a Comment','devdmbootstrap3'), __('One Comment','devdmbootstrap3'), '%' . __('Comments','devdmbooststrap3') );?> <span class="glyphicon glyphicon-comment"></span></a>
                                   </p>
                             <?php endif; ?>
                        </div>

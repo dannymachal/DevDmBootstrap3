@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-1-collapse">
-                        <col-md- class="sr-only">Toggle navigation</col-md->
+                        <col-md- class="sr-only"><?php _e('Toggle navigation','devdmbootstrap3'); ?></col-md->
                         <col-md- class="icon-bar"></col-md->
                         <col-md- class="icon-bar"></col-md->
                         <col-md- class="icon-bar"></col-md->

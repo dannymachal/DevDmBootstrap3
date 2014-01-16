@@ -7,7 +7,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
 ////////////////////////////////////////////////////////////////////
 
     function theme_options_menu() {
-        add_theme_page( 'DevDm Theme Options', 'DevDm Options', 'manage_options', 'devdm-theme-options', 'devdm_theme_options' );
+        add_theme_page( 'DevDm Theme' . __('Options','devdmbootstrap3'), 'DevDm' . __('Options','devdmbootstrap3'), 'manage_options', 'devdm-theme-options', 'devdm_theme_options' );
     }
     add_action( 'admin_menu', 'theme_options_menu' );
 
@@ -16,7 +16,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
     function toolbar_link_to_mypage( $wp_admin_bar ) {
         $args = array(
             'id'    => 'devdm_theme_options',
-            'title' => 'DevDm Options',
+            'title' => __('DevDm Options','devdmbootstrap3'),
             'href'  => home_url() . '/wp-admin/themes.php?page=devdm-theme-options',
             'meta'  => array( 'class' => 'devdm-theme-options' ),
             'parent' => 'site-name'
@@ -54,7 +54,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
         'wheel' => array(
             'url' => '%s/img/deafaultlogo.png',
             'thumbnail_url' => '%s/img/deafaultlogo.png',
-            'description' => __( 'Your Business Name', 'devdmsmallbusiness' )
+            'description' => __( 'Your Business Name', 'devdmbootstrap' )
         ))
 
     );
@@ -122,8 +122,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
         'left_sidebar' => true,
         'left_sidebar_width' => 3,
         'show_header' => true,
-        'show_postmeta' => true,
-        'analytics_code' => '',
+        'show_postmeta' => true
     );
 
     $dm_sidebar_sizes = array(
@@ -169,13 +168,14 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
         $settings = get_option( 'dm_options', $dm_options );
 
         $prev = $settings['right_sidebar_width'];
-        if ( !array_key_exists( $input['right_sidebar_width'], $dm_sidebar_sizes ) )
+        if ( !array_key_exists( $input['right_sidebar_width'], $dm_sidebar_sizes ) ) {
             $input['right_sidebar_width'] = $prev;
+        }
 
         $prev = $settings['left_sidebar_width'];
-        if ( !array_key_exists( $input['left_sidebar_width'], $dm_sidebar_sizes ) )
+        if ( !array_key_exists( $input['left_sidebar_width'], $dm_sidebar_sizes ) ) {
             $input['left_sidebar_width'] = $prev;
-
+        }
 
         if ( ! isset( $input['author_credits'] ) ) {
             $input['author_credits'] = null;
@@ -226,17 +226,17 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
         //get our logo
         $logo = get_template_directory_uri() . '/img/logo.png'; ?>
            <div class="wrap">
-               <a href="<?php echo $developer_uri ?>"><img src="<?php echo $logo; ?>" class="dm-logo" title="Created by Danny Machal @ DevDm.com" /></a>
+               <a href="<?php echo $developer_uri ?>" target="_blank"><img src="<?php echo $logo; ?>" class="dm-logo" title="Created by Danny Machal @ DevDm.com" /></a>
 
             <div class="icon32" id="icon-options-general"></div>
 
-            <h2><a href="<?php echo $developer_uri ?>">DevDmBootstrap3</a></h2>
+            <h2><a href="<?php echo $developer_uri ?>" target="_blank">DevDmBootstrap3</a></h2>
 
                <?php
                if ( ! isset( $_REQUEST['settings-updated'] ) )
-               $_REQUEST['settings-updated'] = false; // This checks whether the form has just been submitted. ?>
+               $_REQUEST['settings-updated'] = false; ?>
                 <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-            <div class='saved'><p><strong>Options Saved!</strong></p></div>
+            <div class='saved'><p><strong><?php _e('Options Saved!','devdmbootstrap3') ;?></strong></p></div>
         <?php endif; ?>
 
         <form action="options.php" method="post">
@@ -246,60 +246,56 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
             ?>
             <table cellpadding='10'>
 
-                <tr valign="top"><th scope="row">Right Sidebar</th>
+                <tr valign="top"><th scope="row"><?php _e('Right Sidebar','devdmbootstrap3') ;?></th>
                     <td>
                         <input type="checkbox" id="right_sidebar" name="dm_options[right_sidebar]" value="1" <?php checked( true, $settings['right_sidebar'] ); ?> />
-                        <label for="right_sidebar">Show the Right Sidebar</label>
+                        <label for="right_sidebar"><?php _e('Show the Right Sidebar','devdmbootstrap3') ;?></label>
                     </td>
                 </tr>
-                <tr valign="top"><th scope="row">Right Sidebar Size</th>
+                <tr valign="top"><th scope="row"><?php _e('Right Sidebar Size','devdmbootstrap3') ;?></th>
                     <td>
                 <?php foreach( $dm_sidebar_sizes as $sizes ) : ?>
-                    <input type="radio" id="<?php echo $sizes['value']; ?>" name="dm_options[right_sidebar_width]" value="<?php echo esc_attr( $sizes['value'] ); ?>" <?php checked( $settings['right_sidebar_width'], $sizes['value'] ); ?> />
+                    <input type="radio" id="<?php echo $sizes['value']; ?>" name="dm_options[right_sidebar_width]" value="<?php echo esc_attr($sizes['value']); ?>" <?php checked( $settings['right_sidebar_width'], $sizes['value'] ); ?> />
                     <label for="<?php echo $sizes['value']; ?>"><?php echo $sizes['label']; ?></label><br />
                 <?php endforeach; ?>
                     </td>
                 </tr>
-                <tr valign="top"><th scope="row">Left Side Bar</th>
+                <tr valign="top"><th scope="row"><?php _e('Left Side Bar','devdmbootstrap3') ;?></th>
                     <td>
                         <input type="checkbox" id="left_sidebar" name="dm_options[left_sidebar]" value="1" <?php checked( true, $settings['left_sidebar'] ); ?> />
-                        <label for="left_sidebar">Show the Left Sidebar</label>
+                        <label for="left_sidebar"><?php _e('Show the Left Sidebar','devdmbootstrap3') ;?></label>
                     </td>
                 </tr>
-                <tr valign="top"><th scope="row">Left Sidebar Size</th>
+                <tr valign="top"><th scope="row"><?php _e('Left Sidebar Size','devdmbootstrap3') ;?></th>
                     <td>
                         <?php foreach( $dm_sidebar_sizes as $sizes ) : ?>
-                            <input type="radio" id="<?php echo $sizes['value']; ?>" name="dm_options[left_sidebar_width]" value="<?php echo esc_attr( $sizes['value'] ); ?>" <?php checked( $settings['left_sidebar_width'], $sizes['value'] ); ?> />
+                            <input type="radio" id="<?php echo $sizes['value']; ?>" name="dm_options[left_sidebar_width]" value="<?php echo esc_attr($sizes['value']); ?>" <?php checked( $settings['left_sidebar_width'], $sizes['value'] ); ?> />
                             <label for="<?php echo $sizes['value']; ?>"><?php echo $sizes['label']; ?></label><br />
                         <?php endforeach; ?>
                     </td>
                 </tr>
-                <tr valign="top"><th scope="row">Show Header</th>
+                <tr valign="top"><th scope="row"><?php _e('Show Header','devdmbootstrap3') ;?></th>
                     <td>
                         <input type="checkbox" id="show_header" name="dm_options[show_header]" value="1" <?php checked( true, $settings['show_header'] ); ?> />
-                        <label for="show_header">Show The Main Header in the Template (logo/sitename/etc.)</label>
+                        <label for="show_header"><?php _e('Show The Main Header in the Template (logo/sitename/etc.)','devdmbootstrap3') ;?></label>
                     </td>
                 </tr>
-                <tr valign="top"><th scope="row">Show Post Meta</th>
+                <tr valign="top"><th scope="row"><?php _e('Show Post Meta','devdmbootstrap3') ;?></th>
                     <td>
                         <input type="checkbox" id="show_postmeta" name="dm_options[show_postmeta]" value="1" <?php checked( true, $settings['show_postmeta'] ); ?> />
-                        <label for="show_postmeta">Show Post Meta data (author, category, date created)</label>
+                        <label for="show_postmeta"><?php _e('Show Post Meta data (author, category, date created)','devdmbootstrap3') ;?></label>
                     </td>
                 </tr>
-                <tr valign="top"><th scope="row"><label for="analytics_code">Google Analytics Code</label></th>
-                    <td>
-                        <textarea id="analytics_code" name="dm_options[analytics_code]" style="width: 500px; height: 200px;"><?php echo esc_attr( $settings['analytics_code'] ); ?></textarea>
-                    </td>
-                </tr>
-                <tr valign="top"><th scope="row">Give Danny His Credit?</th>
+
+                <tr valign="top"><th scope="row"><?php _e('Give Danny His Credit?','devdmbootstrap3') ;?></th>
                     <td>
                         <input type="checkbox" id="author_credits" name="dm_options[author_credits]" value="1" <?php checked( true, $settings['author_credits'] ); ?> />
-                        <label for="author_credits">Show me some love and keep a link to DevDm.com in your footer.</label>
+                        <label for="author_credits"><?php _e('Show me some love and keep a link to DevDm.com in your footer.','devdmbootstrap3') ;?></label>
                     </td>
                 </tr>
             </table>
             <p class="submit">
-                <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes','devdm_textdomain'); ?>" />
+                <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes','devdmbootstrap3'); ?>" />
             </p>
 
         </form>

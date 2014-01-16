@@ -7,7 +7,7 @@
     $themename = "DevDmBootstrap3";
     $developer_uri = "http://devdm.com";
     $shortname = "dm";
-    $version = '1.28';
+    $version = '1.29';
     load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages' );
 
 ////////////////////////////////////////////////////////////////////
@@ -33,15 +33,44 @@
     }
     add_action('wp_enqueue_scripts', 'devdmbootstrap3_theme_stylesheets');
 
+//Editor Style
+add_editor_style('css/editor-style.css');
+
 ////////////////////////////////////////////////////////////////////
 // Register Bootstrap JS with jquery
 ////////////////////////////////////////////////////////////////////
-    function theme_js()
+    function devdmbootstrap3_theme_js()
     {
         global $version;
         wp_enqueue_script('theme-js', get_template_directory_uri() . '/js/bootstrap.js',array( 'jquery' ),$version,true );
     }
-    add_action('wp_enqueue_scripts', 'theme_js');
+    add_action('wp_enqueue_scripts', 'devdmbootstrap3_theme_js');
+
+////////////////////////////////////////////////////////////////////
+// Add Title Parameters
+////////////////////////////////////////////////////////////////////
+
+    function devdmbootstrap3_wp_title( $title, $sep ) { // Taken from Twenty Twelve 1.0
+        global $paged, $page;
+
+        if ( is_feed() )
+            return $title;
+
+        // Add the site name.
+        $title .= get_bloginfo( 'name' );
+
+        // Add the site description for the home/front page.
+        $site_description = get_bloginfo( 'description', 'display' );
+        if ( $site_description && ( is_home() || is_front_page() ) )
+            $title = "$title $sep $site_description";
+
+        // Add a page number if necessary.
+        if ( $paged >= 2 || $page >= 2 )
+            $title = "$title $sep " . sprintf( __( 'Page %s', 'devdmbootstrap3' ), max( $paged, $page ) );
+
+        return $title;
+    }
+    add_filter( 'wp_title', 'devdmbootstrap3_wp_title', 10, 2 );
 
 ////////////////////////////////////////////////////////////////////
 // Register Custom Navigation Walker include custom menu widget to use walkerclass
@@ -54,21 +83,19 @@
 // Register Menus
 ////////////////////////////////////////////////////////////////////
 
-    if ( function_exists( 'register_nav_menus' ) ) {
         register_nav_menus(
             array(
                 'main_menu' => 'Main Menu',
                 'footer_menu' => 'Footer Menu'
             )
         );
-    }
 
 ////////////////////////////////////////////////////////////////////
 // Register the Sidebar(s)
 ////////////////////////////////////////////////////////////////////
 
-    if(function_exists('register_sidebar')){
-        register_sidebar(array(
+        register_sidebar(
+            array(
             'name' => 'Right Sidebar',
             'id' => 'right-sidebar',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -76,7 +103,9 @@
             'before_title' => '<h3>',
             'after_title' => '</h3>',
         ));
-        register_sidebar(array(
+
+        register_sidebar(
+            array(
             'name' => 'Left Sidebar',
             'id' => 'left-sidebar',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -84,13 +113,14 @@
             'before_title' => '<h3>',
             'after_title' => '</h3>',
         ));
-    }
 
 ////////////////////////////////////////////////////////////////////
-// Set Main content area col-md- width based on sidebar declarations
+// Register hook and action to set Main content area col-md- width based on sidebar declarations
 ////////////////////////////////////////////////////////////////////
 
-function main_content_width () {
+add_action( 'devdmbootstrap3_main_content_width_hook', 'devdmbootstrap3_main_content_width_columns');
+
+function devdmbootstrap3_main_content_width_columns () {
 
     global $dm_settings;
 
@@ -104,7 +134,11 @@ function main_content_width () {
         $columns = $columns - $dm_settings['left_sidebar_width'];
     }
 
-    Return $columns;
+    echo $columns;
+}
+
+function devdmbootstrap3_main_content_width() {
+    do_action('devdmbootstrap3_main_content_width_hook');
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -121,22 +155,10 @@ function main_content_width () {
     add_theme_support( 'automatic-feed-links' );
 
 
-//redirect to page after theme is successful
-if (is_admin() && isset($_GET['activated']) && $pagenow == "themes.php")
-    wp_redirect('themes.php?page=devdm-theme-options');
-
 ////////////////////////////////////////////////////////////////////
 // Set Content Width
 ////////////////////////////////////////////////////////////////////
 
 if ( ! isset( $content_width ) ) $content_width = 800;
-
-////////////////////////////////////////////////////////////////////
-// Remove MISC wp_head tags
-////////////////////////////////////////////////////////////////////
-
-remove_action('wp_head', 'wp_generator');
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'rsd_link');
 
 ?>
