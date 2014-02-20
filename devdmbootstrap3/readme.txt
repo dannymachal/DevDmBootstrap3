@@ -10,7 +10,7 @@ http://devdm.com/DevDmBootstrap3/
 
 ### Copyrights and License Information for theme resources
 
-i) DevDmBootstrap3 uses elements from the Twitter Bootstrap Framework, which is under the Apache v2 license.
+i) DevDmBootstrap3 uses elements from the Twitter Bootstrap Framework, which is under The MIT License (MIT).
 ii) DevDmBootstrap3 uses the GLPHYICONS Halflings included in the Twitter Bootstrap Framework, which is under the Apache v2 license.
 iii) DevmMBootstrap3 uses Edward McIntyre’s wp_boot_strap_navwalker https://github.com/twittem/wp-bootstrap-navwalker GPL v3.
 
