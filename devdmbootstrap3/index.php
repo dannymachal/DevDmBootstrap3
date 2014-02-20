@@ -51,7 +51,7 @@
                             <?php  if ( comments_open() ) : ?>
                                    <div class="clear"></div>
                                   <p class="text-right">
-                                      <a class="btn btn-success" type="button" href="<?php the_permalink(); ?>#comments"><?php comments_number(__('Leave a Comment','devdmbootstrap3'), __('One Comment','devdmbootstrap3'), '%' . __('Comments','devdmbooststrap3') );?> <span class="glyphicon glyphicon-comment"></span></a>
+                                      <a class="btn btn-success" type="button" href="<?php the_permalink(); ?>#comments"><?php comments_number(__('Leave a Comment','devdmbootstrap3'), __('One Comment','devdmbootstrap3'), '%' . __(' Comments','devdmbootstrap3') );?> <span class="glyphicon glyphicon-comment"></span></a>
                                   </p>
                             <?php endif; ?>
                        </div>

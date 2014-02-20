@@ -3,7 +3,7 @@
     <p class="text-right">
         <span class="glyphicon glyphicon-user"></span> <?php the_author_posts_link(); ?>
         <span class="glyphicon glyphicon-time"></span> <?php the_time('F jS, Y'); ?>
-        <span class="glyphicon glyphicon-edit"></span> <?php edit_post_link(__('Edit','devdmbooststrap3')); ?>
+        <span class="glyphicon glyphicon-edit"></span> <?php edit_post_link(__('Edit','devdmbootstrap3')); ?>
     </p>
     <p class="text-right"><span class="glyphicon glyphicon-circle-arrow-right"></span> <?php _e('Posted In','devdmbootstrap3'); ?>: <?php the_category(', '); ?></p>
     <?php if( has_tag() ) : ?>
