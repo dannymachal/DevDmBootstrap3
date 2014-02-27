@@ -29,7 +29,7 @@
             $type = 'btn-default';
         }
 
-        $btn = "<a type='button' href='". $link ."' class='btn" . $size . "" . $type. "'>" . $icon . $content . "</a>";
+        $btn = "<a href='". $link ."' class='btn" . $size . "" . $type. "'>" . $icon . $content . "</a>";
         return $btn;
     }
 
