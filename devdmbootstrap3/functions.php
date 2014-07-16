@@ -7,7 +7,7 @@
     $themename = "DevDmBootstrap3";
     $developer_uri = "http://devdm.com";
     $shortname = "dm";
-    $version = '1.29';
+    $version = '1.40';
     load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages' );
 
 ////////////////////////////////////////////////////////////////////
@@ -21,7 +21,7 @@
 ////////////////////////////////////////////////////////////////////
 
     include 'shortcodes.php';
-
+	
 ////////////////////////////////////////////////////////////////////
 // Enqueue Styles (normal style.css and bootstrap.css)
 ////////////////////////////////////////////////////////////////////
@@ -50,6 +50,8 @@ add_editor_style('css/editor-style.css');
 // Add Title Parameters
 ////////////////////////////////////////////////////////////////////
 
+if(!function_exists('devdmbootstrap3_wp_title')) {
+
     function devdmbootstrap3_wp_title( $title, $sep ) { // Taken from Twenty Twelve 1.0
         global $paged, $page;
 
@@ -71,6 +73,9 @@ add_editor_style('css/editor-style.css');
         return $title;
     }
     add_filter( 'wp_title', 'devdmbootstrap3_wp_title', 10, 2 );
+
+}
+
 
 ////////////////////////////////////////////////////////////////////
 // Register Custom Navigation Walker include custom menu widget to use walkerclass

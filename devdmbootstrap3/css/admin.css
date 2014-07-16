@@ -25,11 +25,31 @@
 }
 
 .wrap .dm-logo {
-    float: right;
-    margin: 5px;
+    max-width: 100%;
+    height: auto;
 }
 
 
 .dm_header_name_desc {
     display: inline-block;
+}
+
+.dm-logo-wrap {
+    float: right;
+    margin: 5px;
+}
+
+.dm-options-form-wrap {
+    background-color: #ffffff;
+
+}
+
+@media (max-width: 535px) {
+    .dm-logo-wrap {
+        width: 100%;
+        text-align: center;
+    }
+    .wrap .dm-logo {
+        max-width: 50%;
+    }
 }
