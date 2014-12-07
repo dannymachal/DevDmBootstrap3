@@ -119,7 +119,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
         'author_credits' => true,
         'right_sidebar' => true,
         'right_sidebar_width' => 3,
-        'left_sidebar' => true,
+        'left_sidebar' => false,
         'left_sidebar_width' => 3,
         'show_header' => true,
         'show_postmeta' => true
