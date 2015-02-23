@@ -47,35 +47,25 @@ add_editor_style('css/editor-style.css');
     add_action('wp_enqueue_scripts', 'devdmbootstrap3_theme_js');
 
 ////////////////////////////////////////////////////////////////////
-// Add Title Parameters
+// Add Title Tag Support with Regular Title Tag Fall back.
 ////////////////////////////////////////////////////////////////////
 
-if(!function_exists('devdmbootstrap3_wp_title')) {
-
-    function devdmbootstrap3_wp_title( $title, $sep ) { // Taken from Twenty Twelve 1.0
-        global $paged, $page;
-
-        if ( is_feed() )
-            return $title;
-
-        // Add the site name.
-        $title .= get_bloginfo( 'name' );
-
-        // Add the site description for the home/front page.
-        $site_description = get_bloginfo( 'description', 'display' );
-        if ( $site_description && ( is_home() || is_front_page() ) )
-            $title = "$title $sep $site_description";
-
-        // Add a page number if necessary.
-        if ( $paged >= 2 || $page >= 2 )
-            $title = "$title $sep " . sprintf( __( 'Page %s', 'devdmbootstrap3' ), max( $paged, $page ) );
-
-        return $title;
-    }
-    add_filter( 'wp_title', 'devdmbootstrap3_wp_title', 10, 2 );
-
+function devdmbootstrap3_title_tag() {
+    add_theme_support( 'title-tag' );
 }
 
+add_action( 'after_setup_theme', 'devdmbootstrap3_title_tag' );
+
+if(!function_exists( '_wp_render_title_tag')) {
+
+    function devdmbootstrap3_render_title() {
+        ?>
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
+    <?php
+    }
+    add_action( 'wp_head', 'devdmbootstrap3_render_title' );
+
+}
 
 ////////////////////////////////////////////////////////////////////
 // Register Custom Navigation Walker include custom menu widget to use walkerclass
