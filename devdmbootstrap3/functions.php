@@ -7,7 +7,7 @@
     $themename = "DevDmBootstrap3";
     $developer_uri = "http://devdm.com";
     $shortname = "dm";
-    $version = '1.50';
+    $version = '1.60';
     load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages' );
 
 ////////////////////////////////////////////////////////////////////
@@ -47,7 +47,7 @@ add_editor_style('css/editor-style.css');
     add_action('wp_enqueue_scripts', 'devdmbootstrap3_theme_js');
 
 ////////////////////////////////////////////////////////////////////
-// Add Title Tag Support with Regular Title Tag Fall back.
+// Add Title Tag Support with Regular Title Tag injection Fall back.
 ////////////////////////////////////////////////////////////////////
 
 function devdmbootstrap3_title_tag() {
@@ -66,6 +66,7 @@ if(!function_exists( '_wp_render_title_tag')) {
     add_action( 'wp_head', 'devdmbootstrap3_render_title' );
 
 }
+
 
 ////////////////////////////////////////////////////////////////////
 // Register Custom Navigation Walker include custom menu widget to use walkerclass
