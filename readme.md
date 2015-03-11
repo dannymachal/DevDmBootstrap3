@@ -7,15 +7,16 @@ A lot of folks have been saying that there isn't a good theme out there for deve
 ### [Documentation / Demo] (http://devdm.com/DevDmBootstrap3/)
 
 [http://devdm.com/DevDmBootstrap3/] (http://devdm.com/DevDmBootstrap3/)
+
 [Community Forum] (http://devdm.com/DevDmBootstrap3/community/) for support, tips and a showcase of projects.
 
 ### Available Child Themes
 
 These are drop in child themes created specifically to run on top of DevDmBootstrap3.
 
-## ['cleanblog' v1.5](https://devdm.com/blog/devdmbootstrap3-child-theme-cleanblog/ "Download cleanblog")
+## ['cleanblog' v1.5](https://devdm.com/devdmbootstrap3-child-theme-cleanblog/ "Download cleanblog")
 
-[Download](https://devdm.com/blog/devdmbootstrap3-child-theme-cleanblog/ "Download cleanblog")
+[Download](https://devdm.com/devdmbootstrap3-child-theme-cleanblog/ "Download cleanblog")
 
 ![cleanblog](http://devdm.com/wp-content/uploads/cleanblog1.5.jpg)
 
