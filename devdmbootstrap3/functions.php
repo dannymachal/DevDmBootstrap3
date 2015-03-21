@@ -7,7 +7,7 @@
     $themename = "DevDmBootstrap3";
     $developer_uri = "http://devdm.com";
     $shortname = "dm";
-    $version = '1.60';
+    $version = '1.70';
     load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages' );
 
 ////////////////////////////////////////////////////////////////////
