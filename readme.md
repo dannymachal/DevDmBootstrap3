@@ -16,7 +16,7 @@ These are drop in child themes created specifically to run on top of DevDmBootst
 
 ## [Swatcher v1.3](http://devdm.com/devdmbootstrap3-swatcher/ "Demo Swatcher")
 
-[Download](https://devdm.com/wordpress-theme-store/ "Download Swatcher")
+[Download](https://devdm.com/wordpress-theme-store/ "Download Swatcher") / [Demo and Documentation](http://devdm.com/devdmbootstrap3-swatcher/ "Demo and Documentation for Swatcher")
 
 ![swatcher](http://devdm.com/devdmbootstrap3-swatcher/wp-content/uploads/2015/04/cropped-Mock-Up2.jpg)
 
@@ -25,8 +25,6 @@ These are drop in child themes created specifically to run on top of DevDmBootst
 With “Swatcher” I’ve incorporated all 16 Bootswatch themes. You can easily switch between them with the WordPress theme customizer. This gives you the ability to rapidly transform any DevDmBootstrap3 project into something fresh and new within minutes. Check out the website [http://devdm.com/devdmbootstrap3-swatcher/](http://devdm.com/devdmbootstrap3-swatcher/) for a demo documentation about all of the NEW tools available to you. We are really pushing the limits of the Theme Customizer here and I am excited for it!
 
 Swatcher is an elaborate example of what can be accomplished with WordPress child themes and a little elbow grease.
-
-[http://devdm.com/devdmbootstrap3-swatcher/](Demo and Documentation). 
 
 ## ['cleanblog' v1.5](https://devdm.com/devdmbootstrap3-child-theme-cleanblog/ "Download cleanblog")
 
