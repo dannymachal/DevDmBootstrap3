@@ -22,7 +22,7 @@ These are drop in child themes created specifically to run on top of DevDmBootst
 
 ![swatcher2](https://devdm.com/wp-content/uploads/promo1.jpg)
 
-With “Swatcher” I’ve incorporated all 16 Bootswatch themes. You can easily switch between them with the WordPress theme customizer. This gives you the ability to rapidly transform any DevDmBootstrap3 project into something fresh and new within minutes. This site here is full of documentation about all of the NEW tools available to you. We are really pushing the limits of the Theme Customizer here and I am excited for it!
+With “Swatcher” I’ve incorporated all 16 Bootswatch themes. You can easily switch between them with the WordPress theme customizer. This gives you the ability to rapidly transform any DevDmBootstrap3 project into something fresh and new within minutes. Check out the website [http://devdm.com/devdmbootstrap3-swatcher/](http://devdm.com/devdmbootstrap3-swatcher/) for a demo documentation about all of the NEW tools available to you. We are really pushing the limits of the Theme Customizer here and I am excited for it!
 
 Swatcher is an elaborate example of what can be accomplished with WordPress child themes and a little elbow grease.
 
