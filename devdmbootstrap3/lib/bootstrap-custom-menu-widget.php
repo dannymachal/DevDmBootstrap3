@@ -10,15 +10,18 @@ function register_bootstrap_custom_menu() {
 
 class bootstrap_custom_menu extends WP_Widget {
 
-    function bootstrap_custom_menu() {
-
-        $widget_ops = array( 'classname' => 'bootstrapwidgetmenu', 'description' => __('A custom menu widget that uses the wp_bootstrap_navwalker', 'devdmbootstrap3'));
-
-        $control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'bootstrap-widget-menu');
-
-        $this->WP_Widget( 'bootstrap-widget-menu', __('Boot Strap Menu', 'devdmbootstrap3'), $widget_ops, $control_ops);
-    }
-
+	function __construct() {
+		
+		parent::__construct(
+		
+			'bootstrap-widget-menu',
+			__('Boot Strap Menu', 'devdmbootstrap3'),
+			array('description' => __('A custom menu widget that uses the wp_bootstrap_navwalker', 'devdmbootstrap3'))
+			
+		);
+			
+	}
+	
     //what our widget instance looks like and does with our arguments
     function widget ( $args, $instance) {
         extract($args);
