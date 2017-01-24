@@ -27,8 +27,8 @@
 ////////////////////////////////////////////////////////////////////
     function devdmbootstrap3_theme_stylesheets()
     {
-        wp_enqueue_style('bootstrap.css', get_stylesheet_directory_uri() . '/css/bootstrap.css', array(), '1', 'all' );
-        wp_enqueue_style( 'stylesheet', get_stylesheet_uri(), array(), '1', 'all' );
+        wp_enqueue_style('bootstrap.css', get_stylesheet_directory_uri() . '/css/bootstrap.css', array(), $version, 'all' );
+        wp_enqueue_style( 'stylesheet', get_stylesheet_uri(), array(), $version, 'all' );
     }
     add_action('wp_enqueue_scripts', 'devdmbootstrap3_theme_stylesheets');
 
