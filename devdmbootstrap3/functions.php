@@ -25,7 +25,7 @@
 ////////////////////////////////////////////////////////////////////
 // Enqueue Styles (normal style.css and bootstrap.css)
 ////////////////////////////////////////////////////////////////////
-    function devdmbootstrap3_theme_stylesheets()
+    function devdmbootstrap3_theme_stylesheets($version)
     {
         wp_enqueue_style('bootstrap.css', get_stylesheet_directory_uri() . '/css/bootstrap.css', array(), $version, 'all' );
         wp_enqueue_style( 'stylesheet', get_stylesheet_uri(), array(), $version, 'all' );
