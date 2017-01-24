@@ -12,7 +12,7 @@ Text Domain: devdmbootstrap3
 Template: devdmbootstrap3
 */
 
-@import "css/bootstrap.css";
+/* The bootstrap.css file is auto-enqueued in functions.php */
 
 /* YOU SHOULD BE MAKING A CHILD THEME. Don't let me be a bad guy and erase all your hard work with a theme update. I just want to bring you new amazing features. I don't want to destroy your world. I've include a child theme to use. Need help? http://devdm.com/DevDmBootstrap3/child-themes/ */
 
